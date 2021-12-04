@@ -8,6 +8,8 @@ info:
     name: Apache 2.0
     url: 'http: //www.apache.org/licenses/LICENSE-2.0'
 basePath: /api/partition/v1
+security:
+  - Bearer: []
 tags:
   - name: partition-api
     description: Partition Api
@@ -37,11 +39,6 @@ paths:
           description: Forbidden
         '404':
           description: Not Found
-      security:
-        - JWT:
-            - global
-  '/partitions/{partitionId
-}':
     get:
       tags:
         - partition-api
@@ -70,9 +67,8 @@ paths:
         '404':
           description: Not Found
       security:
-        - JWT:
-            - global
-  '/partitions':
+      - JWT:
+        - global
     get:
       tags:
         - partition-api
@@ -97,8 +93,8 @@ paths:
         '404':
           description: Not Found
       security:
-        - JWT:
-            - global
+      - JWT:
+        - global
     post:
       tags:
         - partition-api
@@ -130,8 +126,8 @@ paths:
         '404':
           description: Not Found
       security:
-        - JWT:
-            - global
+      - JWT:
+        - global
     patch:
       tags:
       - partition-api
@@ -188,8 +184,8 @@ paths:
         '403':
           description: Forbidden
       security:
-        - JWT:
-            - global
+      - JWT:
+        - global
   /info:
     get:
       tags:
